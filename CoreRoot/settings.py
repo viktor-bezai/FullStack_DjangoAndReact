@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     "core.apps.CoreConfig",
     "core.user.apps.UserConfig",
     "core.auth.apps.AuthConfig",
+    "core.post.apps.PostConfig",
 ]
 
 MIDDLEWARE = [
@@ -135,4 +136,7 @@ REST_FRAMEWORK = {
     ),
     'DEFAULT_FILTER_BACKENDS':
         ['django_filters.rest_framework.DjangoFilterBackend'],
+    'DEFAULT_PAGINATION_CLASS':
+        'rest_framework.pagination.LimitOffsetPagination',
+    'PAGE_SIZE': 15,
 }
